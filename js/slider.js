@@ -112,6 +112,13 @@ $("#show-mobile-social-box").on("click", function() {
     $("#show-mobile-social-box").toggleClass("active");
 });
 
+window.addEventListener("click", (e) => {
+ if(e.target !== "blaa") {
+   console.log("test");
+} else {
+   console.log("test again");
+}
+});
 
 
 // animate.css
