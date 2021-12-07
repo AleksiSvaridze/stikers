@@ -88,37 +88,71 @@ $('.firosmani-images').slick({
 });
 
 // Burger Menu
+let burger = document.querySelector('#burger');
+let hiddenBar = document.querySelector('#hidden-bar');
+let menuBar = document.querySelector('.menu-bar');
+let showSocialBox = document.querySelector('#show-social-box');
+let showHiddenNameMenu = document.querySelector("#show-hidden-name-menu");
+let menuItems = document.querySelector('.menu-item');
 
-$("#burger").on("click", function() {
-    $("#burger").toggleClass("active");
-    $("#hidden-bar").toggleClass("active");
-});
+let desktopMenuSettings = function() {
+    // Show hidden bar
+    burger.addEventListener("click", burgerSettings);
+    // Show social icons
+    showSocialBox.addEventListener("click", socialBox);
+    // Show artists name
+    showHiddenNameMenu.addEventListener("click", artistsName);
+}
 
-$("#show-social-box").on("click", function() {
-    $("#show-social-box").toggleClass("active");
-});
+let burgerSettings = function() {
+    burger.classList.toggle("active");
+    hiddenBar.classList.toggle("active");
+};
+let socialBox = function() {
+    showSocialBox.classList.toggle("active");
+};
+let artistsName = function() {
+    showHiddenNameMenu.classList.toggle("active");
+};
 
-$("#show-hidden-name-menu").on("click", function() {
-    $("#show-hidden-name-menu").toggleClass("active");
-});
-
-
-$("#mobile-burger").on("click", function() {
-    $("#mobile-burger").toggleClass("active");
-    $("#mobile-hidden-bar").toggleClass("active");
-});
-
-$("#show-mobile-social-box").on("click", function() {
-    $("#show-mobile-social-box").toggleClass("active");
-});
+desktopMenuSettings();
 
 window.addEventListener("click", (e) => {
- if(e.target !== "blaa") {
-   console.log("test");
-} else {
-   console.log("test again");
-}
+
+    // if(e.target != burger && e.target.parentNode != burger) {
+    //     burger.classList.remove("active");
+    //     hiddenBar.classList.remove("active");
+    // } else {
+    //     burger.classList.add("active");
+    //     hiddenBar.classList.add("active");
+    // }
+
+    // if( (burger.classList.contains('active') && hiddenBar.classList.contains('active')) && ) {
+        
+    // }
+    
 });
+
+
+// Mobile menu settings
+let mobileBurger = document.querySelector("#mobile-burger");
+let mobileHiddenBar = document.querySelector("#mobile-hidden-bar");
+let showMobileSocialBox = document.querySelector("#show-mobile-social-box");
+
+function responsiveMenuSettings(){
+
+    mobileBurger.addEventListener("click", () => {
+        mobileBurger.classList.toggle("active");
+        mobileHiddenBar.classList.toggle("active");
+    });
+    // 
+    showMobileSocialBox.addEventListener("click", () => {
+        showMobileSocialBox.classList.toggle("active");
+    });
+}
+responsiveMenuSettings();
+
+
 
 
 // animate.css

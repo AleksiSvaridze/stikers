@@ -43,6 +43,8 @@ h1, h2, h3, p, a, input, textarea {
 	display: flex;
 	justify-content: space-around;
 	padding-bottom: 20px;
+
+	overflow: hidden;
 }
 .inner-page-for-contact {
 	position: absolute;
