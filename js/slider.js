@@ -119,6 +119,8 @@ desktopMenuSettings();
 
 window.addEventListener("click", (e) => {
 
+    // ?
+
     // if(e.target != burger && e.target.parentNode != burger) {
     //     burger.classList.remove("active");
     //     hiddenBar.classList.remove("active");
